@@ -1,0 +1,36 @@
+.message-container{
+    background-color: #ffffff;
+    border-radius: 50px;
+    height: 800px;
+    width: 400px;
+}
+
+.message-container header{
+    padding: 20px 10px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+header .chat-icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+hr{
+    border: 2px solid #f1f1f1;
+}
+
+.message-content{
+    margin: 30px;
+}
+
+.message-input{
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    background-color: #f5f5f5;
+    border: 1px white;
+    border-radius: 50px;
+}

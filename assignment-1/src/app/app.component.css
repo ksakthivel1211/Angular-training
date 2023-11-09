@@ -1,0 +1,27 @@
+main{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: auto auto;
+
+}
+.left-container{
+    background-color: hsl(204.94deg 30.92% 48.82%);
+}
+.right-container{
+    background-color: hsl(240deg 17.02% 36.86%);
+}
+
+.left-container,.right-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.message-container{
+    background-color: white;
+    border-radius: 50px;
+    height: 800px;
+    width: 400px;
+}
