@@ -19,7 +19,7 @@
         </div>
 
         <div class="message-input-wrapper">
-            <input type="text" class="message-input"  value="Message..." #messageContent>
+            <input type="text" class="message-input"  placeholder="Message..." #messageContent>
             <button class="message-send-button" (click)="messageReceived(messageContent)"  [ngStyle]="{backgroundColor:getThemeColor()}">
                 <img src="../../assets/icons/iconizer-paper-plane-solid.svg">
             </button>
