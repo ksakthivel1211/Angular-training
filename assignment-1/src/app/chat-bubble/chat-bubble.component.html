@@ -1,0 +1,8 @@
+<div class="chat-bubble" [innerHTML]="singleMessage.message" 
+[ngClass]="{'right-chat-bubble':getBubbleSide()=='right','left-chat-bubble':getBubbleSide()=='left'}"
+[ngStyle]="{backgroundColor:getBubbleSide()=='right' ? getBubbleColor():''}"
+></div>
+<div class="time"
+[ngStyle]="{textAlign: getBubbleSide()=='right' ? 'right' : 'left'}"
+>{{todayDate | date:'shortTime'}}</div>
+

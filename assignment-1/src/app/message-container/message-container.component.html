@@ -1,10 +1,29 @@
   <div class="message-container">
     <header>
-    < <img src="../../assets/images/wp6776560-minimalist-daredevil-wallpapers.jpg" class="chat-icon"> SAKTHI
+    <span class="back-icon-container"><img class="back-icon" src="../../assets/icons/chevron-left-solid.svg"></span> <img src="../../assets/images/wp6776560-minimalist-daredevil-wallpapers.jpg" class="chat-icon"> {{chatName}}
     </header>
     <hr>
     <div class="message-content">
-        <input type="text" class="message-input" value="Message">
+
+        <div class="chat-bubble-container">
+
+            <app-chat-bubble
+            [ngClass]="{'right-chat-bubble': oneMessage.messageFrom=='sent','left-chat-bubble': oneMessage.messageFrom=='received'}"
+            *ngFor="let oneMessage of allMessages"
+            [singleMessage]="oneMessage"
+            [bubbleColour]="getThemeColor()"
+            [containerSide]="getContainerSide()"
+            >
+            </app-chat-bubble>
+
+        </div>
+
+        <div class="message-input-wrapper">
+            <input type="text" class="message-input"  value="Message..." #messageContent>
+            <button class="message-send-button" (click)="messageReceived(messageContent)"  [ngStyle]="{backgroundColor:getThemeColor()}">
+                <img src="../../assets/icons/iconizer-paper-plane-solid.svg">
+            </button>
+
     </div>
 
   </div>

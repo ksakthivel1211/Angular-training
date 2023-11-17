@@ -1,10 +1,33 @@
       <main>
-        <div class="left-container">
-          first
-          <app-message-container></app-message-container>
+        <div class="left-container"
+        [ngStyle]="{backgroundColor:getLeftThemeColor()}">
+          <app-message-container 
+          (messageDetails)="onMounikaMessageReceived($event)"
+          [receivingMessage]="somMessageValue"
+          [themeColour]="getLeftThemeColor()"
+          [chatName]="'Mounika Murugesan'"
+          
+          >
+          </app-message-container>
+
+          <app-colour-pallete-container
+          (themeColour)="onLeftContainerColourChange($event)"
+          ></app-colour-pallete-container>
         </div>
-        <div class="right-container">
-          second
-          <app-message-container></app-message-container>
+
+
+        <div class="right-container"
+        [ngStyle]="{backgroundColor:getRightThemeColor()}">
+          <app-message-container
+          (messageDetails)="onSomMessageReceived($event)"
+          [chatName]="'Somukumar Ekambaram'"
+          [receivingMessage]="mounikaMessageValue"
+          [themeColour]="getRightThemeColor()"
+          ></app-message-container>
+
+
+          <app-colour-pallete-container
+          (themeColour)="onRightContainerColourChange($event)"
+          ></app-colour-pallete-container>
         </div>
       </main>

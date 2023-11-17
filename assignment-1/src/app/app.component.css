@@ -2,25 +2,22 @@ main{
     display: grid;
     height: 100vh;
     grid-template-columns: auto auto;
-
-}
-.left-container{
-    background-color: hsl(204.94deg 30.92% 48.82%);
-}
-.right-container{
-    background-color: hsl(240deg 17.02% 36.86%);
+    font-family: sans-serif;
 }
 
 .left-container,.right-container{
+    background-color: #5683a3;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     justify-content: center;
     align-content: center;
+    transition: 1.5s;
+    box-shadow: 0 0 5px 2px black;
 }
 
 .message-container{
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 50px;
     height: 800px;
     width: 400px;
