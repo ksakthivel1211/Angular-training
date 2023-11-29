@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 
+// const chatBubble = document.getElementById('child-bubble');
+
+
 @Component({
   selector: 'app-chat-bubble',
   templateUrl: './chat-bubble.component.html',
@@ -34,10 +37,39 @@ export class ChatBubbleComponent {
     return this.singleMessage.message;
   }
 
-  getBubbleColor()
+  getBubbleColorClass()
   { 
+    console.log(this.bubbleColour);
     
-    return this.bubbleColour;
+    if(this.bubbleColour=='#8f8f8f')
+    {
+        return 'grey';
+    }
+    if(this.bubbleColour=='#dbe2c3')
+    {
+      return 'paleGreen';
+    }
+    if(this.bubbleColour=='#637979')
+    {
+      return 'tint';
+    }
+    if(this.bubbleColour=='#20410f')
+    {
+      return 'darkGreen';
+    }
+    if(this.bubbleColour=='#4e4e6e')
+    {
+      return 'purple';
+    }
+    if(this.bubbleColour=='#5683a3')
+    {
+      console.log("hi");
+      return 'powerBlue'
+
+      
+    }
+  
+    return 'powderBlue';
   }
 
   getContainerSide()
@@ -49,19 +81,22 @@ export class ChatBubbleComponent {
     
       if(this.getContainerSide()=='right'){
         if(this.getBubbleSide()=='right'){
-          return '20px 20px 0px 20px';
+          return 'right-cont-right-bubble';
         }
         else{
-          return '20px 20px 20px 0px';
+          return 'right-cont-left-bubble';
         }
       }
       else{
         if(this.getBubbleSide()=='right'){
-          return '30px 30px 0px 30px';
+          return 'left-cont-right-bubble';
         }
         else{
-          return '30px 30px 30px 0px';
+          return 'left-cont-left-bubble';
         }
       }
   }
+
+
+  
 }

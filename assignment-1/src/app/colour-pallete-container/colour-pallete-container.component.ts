@@ -14,10 +14,10 @@ export class ColourPalleteContainerComponent {
 
 
 
-  onColorChange(event : any){
+  onColorChange(color : string){
         this.themeColour.emit({
-      colourValue: event.target.value
+      colourValue: color
     });
-    this.currentTheme= event.target.value;
+    this.currentTheme= color
   }
 }

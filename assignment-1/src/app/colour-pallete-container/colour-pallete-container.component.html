@@ -1,9 +1,8 @@
 <div class="colour-pallete-container">
-    <button class="colour-button clr1" value="#8f8f8f" (click)="onColorChange($event)" [ngClass]="{'selected':currentTheme==='#8f8f8f'}"></button>
-    <button class="colour-button clr2" value="#dbe2c3" (click)="onColorChange($event)" [ngClass]="{'selected':currentTheme==='#dbe2c3'}"></button>
-    <button class="colour-button clr3" value="#637979" (click)="onColorChange($event)" [ngClass]="{'selected':currentTheme==='#637979'}"></button>
-    <button class="colour-button clr4" value="#20410f" (click)="onColorChange($event)" [ngClass]="{'selected':currentTheme==='#20410f'}"></button>
-    
-    <button class="colour-button clr5" value="#4e4e6e" (click)="onColorChange($event)" [ngClass]="{'selected':currentTheme==='#4e4e6e'}"></button>
-    <button class="colour-button clr6" value="#5683a3" (click)="onColorChange($event)" [ngClass]="{'selected':currentTheme==='#5683a3'}"></button>
+    <button class="colour-button clr1" (click)="onColorChange('#8f8f8f')" [ngClass]="{'selected':currentTheme==='#8f8f8f'}"></button>
+    <button class="colour-button clr2" (click)="onColorChange('#dbe2c3')" [ngClass]="{'selected':currentTheme==='#dbe2c3'}"></button>
+    <button class="colour-button clr3" (click)="onColorChange('#637979')" [ngClass]="{'selected':currentTheme==='#637979'}"></button>
+    <button class="colour-button clr4" (click)="onColorChange('#20410f')" [ngClass]="{'selected':currentTheme==='#20410f'}"></button>
+    <button class="colour-button clr5" (click)="onColorChange('#4e4e6e')" [ngClass]="{'selected':currentTheme==='#4e4e6e'}"></button>
+    <button class="colour-button clr6" (click)="onColorChange('#5683a3')" [ngClass]="{'selected':currentTheme==='#5683a3'}"></button>
 </div>

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { PROFILE_ICON,BACK_ICON,SEND_ICON } from '../constants/constants';
 
 type messageContent = {
   messageFrom: string;
@@ -14,11 +15,26 @@ type message= {
   templateUrl: './message-container.component.html',
   styleUrls: ['./message-container.component.css']
 })
-export class MessageContainerComponent { 
+export class MessageContainerComponent implements AfterViewChecked{ 
+
+  @ViewChild('bubbleContainer',{static:false}) bubbleContainer! : ElementRef;
+
+
+  ngAfterViewChecked()
+  {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom(){
+    this.bubbleContainer.nativeElement.scrollTop = this.bubbleContainer.nativeElement.scrollHeight;
+  }
 
   private receivingMessageValue!: message;
 
-  currentTime:any;
+  readonly profileIcon = PROFILE_ICON;
+  readonly backIcon = BACK_ICON;
+  readonly sendIcon = SEND_ICON;
+
   @Input() chatName : string ="";
 
   @Input('receivingMessage')
@@ -56,18 +72,13 @@ export class MessageContainerComponent {
       this.allMessages.push({messageFrom:'sent',message:messageContent.value})
     }
 
-    
+    messageContent.value='';
   }
 
   getThemeColor()
   { 
     return this.themeColour;
   }
-
-  getCurrentTime():any{
-    this.currentTime = new Date().getHours() + '.' + new Date().getMinutes();
-    return this.currentTime;
-}
 
   getChatName()
   {

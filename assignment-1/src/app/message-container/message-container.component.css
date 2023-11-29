@@ -1,7 +1,8 @@
+
 .message-container{
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: white;
     border-radius: 50px;
     height: 800px;
     width: 400px;
@@ -21,10 +22,7 @@
 
 header .back-icon{
     height: 20px;
-}
-
-.back-icon-container{
-
+    cursor: pointer;
 }
 
 header .chat-icon{
@@ -34,7 +32,7 @@ header .chat-icon{
 }
 
 hr{
-    border: 2px solid #f1f1f1;
+    border: 2px solid white;
 }
 
 .chat-bubble-container{
@@ -67,7 +65,7 @@ hr{
 
 .message-input-wrapper{
     position: relative;
-    background-color: #f5f5f5;
+    background-color: var(--light-wheat);
     width: 100%;
     border: 10px white;
     border-radius: 50px;
@@ -76,8 +74,8 @@ hr{
 .message-input{
     padding: 25px;
     width: 80%;
-    color: #8f8f8f;
-    background-color: #f5f5f5;
+    color: var(--grey);
+    background-color: var(--light-wheat);
     border: none;
     border-radius: 50px;
     outline: none;
@@ -89,10 +87,10 @@ hr{
     top: 9px;
     height: 50px;
     width: 50px;
-    background-color: #4e4e6e;
     border-radius: 50%;
     border: none;
     transition: 1s;
+    cursor: pointer;
 }
 
 .message-send-button img{

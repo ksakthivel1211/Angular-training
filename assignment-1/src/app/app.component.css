@@ -6,7 +6,6 @@ main{
 }
 
 .left-container,.right-container{
-    background-color: #5683a3;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -17,7 +16,6 @@ main{
 }
 
 .message-container{
-    background-color: #ffffff;
     border-radius: 50px;
     height: 800px;
     width: 400px;
