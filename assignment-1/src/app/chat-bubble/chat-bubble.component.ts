@@ -39,7 +39,6 @@ export class ChatBubbleComponent {
 
   getBubbleColorClass()
   { 
-    console.log(this.bubbleColour);
     
     if(this.bubbleColour=='#8f8f8f')
     {
@@ -63,10 +62,7 @@ export class ChatBubbleComponent {
     }
     if(this.bubbleColour=='#5683a3')
     {
-      console.log("hi");
       return 'powerBlue'
-
-      
     }
   
     return 'powderBlue';
