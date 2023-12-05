@@ -1,0 +1,13 @@
+<div class="bubble-wrapper"
+
+[ngClass]="getBubbleContainerSide()"
+>
+
+    <div class="chat-bubble" id="child-bubble" [innerHTML]="singleMessage.message"
+    [ngClass]="getBubbleColorClass()"    >
+    </div>
+
+<div class="time"
+>{{todayDate | date:'shortTime'}}</div>
+
+</div> 

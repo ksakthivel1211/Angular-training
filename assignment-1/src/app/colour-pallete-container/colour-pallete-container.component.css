@@ -1,0 +1,74 @@
+
+
+.colour-pallete-container{
+    display: flex;
+    margin-top: 70px;
+    column-gap: 10px;
+    background-color: transparent;
+    justify-content: center;
+}
+
+.colour-button{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.clr1{
+    background-color: var(--grey);
+}
+.clr1:hover{
+    box-shadow: 0 0 5px var(--grey), 0 0 25px var(--grey), 0 0 50px var(--grey), 0 0 200px var(--grey);
+}
+.clr2{
+    background-color: var(--pale-green);
+}
+.clr2:hover{
+    box-shadow: 0 0 5px var(--pale-green), 0 0 25px var(--pale-green), 0 0 50px var(--pale-green) 0 0 200px var(--pale-green);
+}
+.clr3
+{
+    background-color: var(--tint);
+}
+.clr3:hover{
+    box-shadow: 0 0 5px var(--tint), 0 0 25px var(--tint), 0 0 50px var(--tint), 0 0 200px var(--tint);
+}
+.clr4{
+    background-color: var(--dark-green);
+}
+.clr4:hover{
+    box-shadow: 0 0 5px var(--dark-green), 0 0 25px var(--dark-green), 0 0 50px var(--dark-green), 0 0 200px var(--dark-green);
+}
+.clr5{
+    background-color: var(--purple);
+}
+.clr5:hover{
+    box-shadow: 0 0 5px var(--purple), 0 0 25px var(--purple), 0 0 50px var(--purple), 0 0 200px var(--purple);
+}
+.clr6{
+    background-color: var(--powder-blue); 
+}
+.clr6:hover{
+    box-shadow: 0 0 5px var(--powder-blue), 0 0 25px var(--powder-blue), 0 0 50px var(--powder-blue), 0 0 200px var(--powder-blue);
+}
+.selected{
+    border: 1px white solid;
+}
+
+.selected:after {
+    content: 'L';
+    color: white;
+    position: absolute;
+    left:7px; top: 3px;
+    width: 10px; 
+    height: 10px;
+    text-align: center;
+    
+    transform: scaleX(-1) rotate(-35deg);
+  }
+
+
+

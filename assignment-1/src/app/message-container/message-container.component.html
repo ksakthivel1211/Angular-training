@@ -1,0 +1,30 @@
+  <div class="message-container">
+    <header>
+    <span class="back-icon-container"><img class="back-icon" src={{backIcon}}></span> <img src={{profileIcon}} class="chat-icon"> {{chatName}}
+    </header>
+    <hr>
+    <div class="message-content">
+
+        <div class="chat-bubble-container" #bubbleContainer>
+
+            <app-chat-bubble
+            [ngClass]="{'right-chat-bubble': oneMessage.messageFrom=='sent','left-chat-bubble': oneMessage.messageFrom=='received'}"
+            *ngFor="let oneMessage of allMessages"
+            [singleMessage]="oneMessage"
+            [bubbleColour]="getThemeColor()"
+            [containerSide]="getContainerSide()"
+            >
+            </app-chat-bubble>
+
+        </div>
+
+        <div class="message-input-wrapper">
+            <input type="text" class="message-input"  placeholder="Message..." #messageContent>
+            <button class="message-send-button" (click)="messageReceived(messageContent)"  [ngStyle]="{backgroundColor:getThemeColor()}">
+                <img src={{sendIcon}}>
+            </button>
+
+    </div>
+
+  </div>
+
