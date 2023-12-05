@@ -19,7 +19,8 @@
 }
 
 .bubble-wrapper{
-    width: 70%;
+    max-width: fit-content;
+    min-width: 70%;
 }
 
 .right-cont-left-bubble > .chat-bubble,.left-cont-left-bubble > .chat-bubble{
