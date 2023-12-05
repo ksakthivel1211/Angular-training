@@ -1,0 +1,22 @@
+header{
+    background-color: var(--red);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .menu-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* @font-face {
+    font-family: "popins";
+    src: url("./assets/fonts/Poppins-Regular.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+} */
