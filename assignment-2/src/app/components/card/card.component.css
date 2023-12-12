@@ -1,0 +1,73 @@
+.card-description{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    column-gap: 10px;
+}
+
+.bottom-container{
+    padding: 0 20px;
+    color: var(--letter-gray);
+    font-size: 15px;
+}
+
+.data-wrapper p{
+    overflow-wrap: break-word;
+}
+
+button{
+    border: none;
+    background-color: var(--red);
+    color: white;
+    padding: 10px 40px;
+    margin-top: 20px;
+}
+
+.img-holder img{
+    height: 190px;
+}
+
+.restaurant .left-description{
+    line-height: 1;
+}
+
+.restaurant .right-description{
+    text-align: right;
+    font-size: 12px;
+}
+
+.exploreFood .left-description p{
+    color: var(--peacock-blue);
+    font-weight: 500;
+}
+
+.exploreFood .right-description{
+    color: var(--orange);
+    font-weight: 600;
+}
+
+.restaurant .left-description .data-wrapper:nth-child(-n+2) p
+{
+    color: var(--peacock-blue);
+}
+
+.restaurant .left-description .data-wrapper:nth-child(1) p
+{
+    font-size: 18px;
+}
+
+.restaurant .left-description .data-wrapper:nth-child(2) p
+{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.restaurant .left-description .data-wrapper:nth-child(3) p
+{
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.restaurant .right-description{
+    color: var(--peacock-blue);
+}

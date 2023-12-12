@@ -1,0 +1,37 @@
+<main>
+  <div class="restaurant-search">
+    <div class="search-wrapper">
+        <h1>{{pageContent.pageHeadingline1}}</h1>
+        <h2>{{pageContent.pageHeadingline2}}</h2>
+      <app-input-box [inputPage]="'home'"></app-input-box>
+    </div>
+    <div class="delivery-img"><img src={{loginImage}}></div>
+  </div>
+
+  <div class="location">
+    <img src={{locationIcon}}>
+     {{currentLocation}}
+  </div>
+
+  <div class="advanced-booking-wrapper">
+    <div class="advanced-booking">
+      <hr>
+      <p>{{pageContent.advancedSearchHeading}}</p>
+
+      <app-input-box class="advance-send" [inputPage]="'home-advanced'"></app-input-box>
+
+    </div>
+  </div>
+
+  <div class="explore-food-wrapper">
+    <p>{{pageContent.exploreFoodsHeading}}</p>
+    <div class="explore-food-description">{{pageContent.exploreFoodsDescription}}</div>
+    <div class="explore-food-card-holder">
+
+      <div class="food-card" *ngFor="let food of exploreFoodData">
+          <app-card [cardDetails]="food"></app-card>
+      </div>
+      
+    </div>
+  </div>
+</main>

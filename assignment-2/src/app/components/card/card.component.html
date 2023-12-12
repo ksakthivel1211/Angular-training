@@ -1,0 +1,29 @@
+<div [ngClass]="cardDetails.name">
+
+    <div class="img-holder">
+        <img src={{cardDetails.img}} alt="restaurant img">
+    </div>
+
+
+    <div class="card-description">
+
+        <div class="left-description">
+            <div class="data-wrapper" *ngFor="let cardValue of cardDetails.leftContainer">
+                <p>{{cardValue}}</p>
+            </div>
+
+        </div>
+
+        <div class="right-description">
+            <div class="data-wrapper" *ngFor="let cardValue of cardDetails.rightContainer">
+                <p>{{cardValue}}</p>
+            </div>
+            <button *ngIf="cardDetails.name=='restaurant'">{{restaurantButtonContext}}</button>
+        </div>
+
+    </div>
+
+    <div class="bottom-container" *ngIf="cardDetails.name=='exploreFood'">
+        <p>{{cardDetails.bottomContainer}}</p>
+    </div>
+</div>

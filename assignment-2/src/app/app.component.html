@@ -1,0 +1,35 @@
+<header>
+
+    <div class="logo">{{headerNavBarData.heading}}</div>
+  
+    <div class="menu-bar">
+    <div routerLinkActive="active"><a routerLink="">{{headerNavBarData.home}}</a></div>
+    <div routerLinkActive="active" (click)="refreshRestaurants()"><a routerLink="restaurants">{{headerNavBarData.restaurants}}</a></div>
+    <!-- <div routerLinkActive="active" (click)="refreshRestaurants()" *ngIf="isLogged()"><a routerLink="restaurants">{{headerNavBarData.restaurants}}</a></div> -->
+    </div>
+
+    <div>
+        <div class="logout" (click)="logout()" *ngIf="isLogged()">{{headerNavBarData.logout}}</div>
+        <div class="login" routerLinkActive="active" *ngIf="!isLogged() && !inLoginPage()"><a routerLink="login">{{headerNavBarData.login}}</a></div>
+    </div>
+
+
+</header>
+
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+
+<footer>
+    <p>{{footerContext}}</p>
+    <div>
+        <div class="social-media">
+            <img src={{twitterImage}}>
+            <img src={{facabookImage}}>
+            <img src={{linkedinImage}}>
+            <img src={{instagramImage}}>
+        </div>
+        <p>{{footerContext}}</p>
+    </div>
+
+</footer>

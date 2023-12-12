@@ -1,0 +1,50 @@
+.send-button{
+    position: absolute;
+    border: none;
+    color: white;
+    background-color: var(--red);
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+    right: 3%;
+    top: 19%;
+}
+
+.input-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.home-advanced .input-wrapper{
+    box-shadow: 0 0 10px var(--red);
+}
+
+.input-wrapper input{
+    padding: 20px;
+    width: 600px;
+    background-color: white;
+}
+
+.advance-selectable{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.advance-selectable div{
+    display: flex;
+    flex-direction: column;
+}
+
+.advance-selectable select{
+    border: none;
+}
+
+.advance-selectable label{
+    color: var(--purple);
+    font-weight: 600;
+    font-size: 15px;
+}

@@ -1,0 +1,41 @@
+header{
+    background-color: var(--red);
+    padding: 0px 10%;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
+header .menu-bar{
+    display: flex;
+    column-gap: 35px;
+}
+
+.logout{
+    cursor: pointer;
+}
+
+footer{
+    display: flex;
+    width: 60%;
+    margin: 100px auto 30px;
+    justify-content: space-between;
+}
+
+.social-media{
+    column-gap: 20px;
+}
+
+footer div{
+    width: 39%;
+    justify-content: space-between;
+    display: flex;
+}

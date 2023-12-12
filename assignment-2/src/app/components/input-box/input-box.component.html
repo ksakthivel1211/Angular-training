@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit(formValue)" #formValue="ngForm" ngClass={{inputPage}}>
+    <div class="input-wrapper">
+    <input type="text" placeholder="search restaurant" name="restaurantName" ngModel>
+    <button type="submit" class="send-button">{{buttonText}}</button>
+    </div>
+
+    <div class="advance-selectable" ngModelGroup="searchData" #advancedSearchData = "ngModelGroup" *ngIf="inputPage == 'home-advanced'">
+
+        <div>
+          <label for="date">{{advancedSearchFields.date}}</label>
+          <input type="date" name="date" ngModel>
+        </div>
+
+        <div>
+          <label for="time">{{advancedSearchFields.time}}</label>
+          <input type="time" name="time" ngModel>
+        </div>
+  
+        <div>
+          <label for="customerCount">{{advancedSearchFields.customerCount}}</label>
+          <select 
+          class="form-control" 
+          name="customerCount"
+          ngModel>
+          <option value="" selected disabled hidden>- -</option>
+            <option value="count" *ngFor="let count of maxCustomerBooking">{{count | prefixSufix:'input'}}</option>
+          </select>
+        </div>
+
+      </div>
+
+</form>

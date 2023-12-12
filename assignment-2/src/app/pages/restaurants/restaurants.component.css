@@ -1,0 +1,39 @@
+
+.restaurant-wrapper{
+    width: 80%;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.head-content{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.head-content div{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.head-content h2{
+    font-weight: 500;
+}
+
+.card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.restaurant-card{
+    background-color: white;
+    width: 32%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+
