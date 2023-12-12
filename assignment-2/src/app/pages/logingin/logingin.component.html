@@ -1,0 +1,20 @@
+<main>
+    <div class="login-wrapper">
+        <img src={{loginIcon}}>
+        <div class="form-wrapper">
+            <p>{{pageHeading}}</p>
+            <form (ngSubmit)="onSubmit()" #formValue="ngForm" class="form">
+                <div class="login-data" ngModelGroup="userData" #userData = "ngModelGroup">
+    
+                    <input type="text" placeholder="Username" id="username" name="username" ngModel required>
+    
+                    <input type="password" placeholder="Password" id="password" name="password" ngModel required>
+    
+                    <span *ngIf="!userDetailsValid">{{invalidCredentials}}</span>
+    
+                    <button type="submit" name="login" class="login-button">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

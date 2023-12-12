@@ -3,10 +3,39 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color:var(--common-background);
 }
 
 :root{
     --red: #fe053c;   
+    --biscut: #ffedde;
+    --common-background:#fff5ec;
+    --purple:#2e266f;
+    --light-gray:#f7ece6;
+    --peacock-blue: #20455f;
+    --letter-gray:#b1b5b8;
+    --orange:#f7816a;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+input{
+    border: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+img{
+    width: 100%;
 }
 
 /* @font-face {
