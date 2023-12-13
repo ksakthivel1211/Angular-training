@@ -8,8 +8,7 @@ import { AuthGaurdService } from './services/auth-gaurd.service';
 const routes: Routes = [
   {path:'' , component:HomeComponent},
   {path:'login' , component:LoginginComponent},
-  {path:'restaurants' , component:RestaurantsComponent},
-  // {path:'restaurants' ,canActivate:[AuthGaurdService] , component:RestaurantsComponent},
+  {path:'restaurants' ,canActivate:[AuthGaurdService] , component:RestaurantsComponent},
 ];
 
 @NgModule({

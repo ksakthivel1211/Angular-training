@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { INVALID_RESTAURANT_NAME } from 'src/app/constants/error.constants';
 import { RESTAURANT_IMAGE } from 'src/app/constants/img.constants';
+import { PrefixSufixPipe } from 'src/app/pipes/prefix-sufix.pipe';
 import { DataService } from 'src/app/services/data.service';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 
@@ -30,6 +31,8 @@ export class RestaurantsComponent {
 
   readonly restaurantImage = RESTAURANT_IMAGE;
   readonly invalidRestaurantResponse = INVALID_RESTAURANT_NAME;
+
+  prefixSufixPipe = new PrefixSufixPipe();
 
   pageHeading = "Restaurants";
 
@@ -77,7 +80,7 @@ export class RestaurantsComponent {
       };
       
       card.leftContainer.push(restaurant.restaurantName,restaurant.address,restaurant.foodCatogories);
-      card.rightContainer.push("Rating "+ restaurant.rating,"Delivery in "+restaurant.deliveryTime+" mins","$"+restaurant.price+" for two");
+      card.rightContainer.push(this.prefixSufixPipe.transform(restaurant.rating,"restaurantRating"),this.prefixSufixPipe.transform(restaurant.rating,"restaurantDeliverTime"),this.prefixSufixPipe.transform(restaurant.rating,"restaurantPrice"));
       this.cardValues.push(card);
       
     })

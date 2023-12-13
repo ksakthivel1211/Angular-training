@@ -104,19 +104,4 @@ export class HomeComponent{
       
     });
   }
-
-  // updateRestaurantName(name:string)
-  // {
-  //   this.restaurantService.updateRestaurantSearch(name);
-  //   this.router.navigate(['/restaurants']);
-  // }
-
-  // advancedSearch(name:string)
-  // {
-  //   this.advancedSearchInputs.date = this.advancedSearchFormValue.value.searchData.date;
-  //   this.advancedSearchInputs.time = this.advancedSearchFormValue.value.searchData.time;
-  //   this.advancedSearchInputs.guestCount = this.advancedSearchFormValue.value.searchData.customerCount;
-  //   this.restaurantService.updateRestaurantSearch(name);
-  //   this.router.navigate(['/restaurants']);
-  // }
 }

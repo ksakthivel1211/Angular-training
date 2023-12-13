@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 import { RestaurantService } from 'src/app/services/restaurant.service';
 
 @Component({
-  selector: 'app-input-box',
-  templateUrl: './input-box.component.html',
-  styleUrls: ['./input-box.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class InputBoxComponent {
+export class SearchComponent {
+
+
 
   value!:string;
 

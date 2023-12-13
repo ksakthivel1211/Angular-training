@@ -7,12 +7,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginginComponent } from './pages/logingin/logingin.component';
 import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
-import { InputBoxComponent } from './components/input-box/input-box.component';
 import { FormsModule } from '@angular/forms';
 import { AuthGaurdService } from './services/auth-gaurd.service';
 import { LoginService } from './services/login.service';
 import { CardComponent } from './components/card/card.component';
 import { PrefixSufixPipe } from './pipes/prefix-sufix.pipe';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +20,9 @@ import { PrefixSufixPipe } from './pipes/prefix-sufix.pipe';
     HomeComponent,
     LoginginComponent,
     RestaurantsComponent,
-    InputBoxComponent,
     CardComponent,
-    PrefixSufixPipe
+    PrefixSufixPipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

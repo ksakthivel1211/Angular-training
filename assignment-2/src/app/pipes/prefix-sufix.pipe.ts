@@ -11,6 +11,18 @@ export class PrefixSufixPipe implements PipeTransform {
     {
       return value + " people";
     }
+    else if(from==="restaurantRating")
+    {
+      return "Rating "+value;
+    }
+    else if(from==="restaurantDeliverTime")
+    {
+      return "Delivery in "+value+" mins";
+    }
+    else if(from==="restaurantPrice")
+    {
+      return "$ "+value+" for two"
+    }
     else
     {
       return value;

@@ -4,7 +4,7 @@
             <h2>{{pageHeading}}</h2>
             <div>
                 <div *ngIf="!searchedRestaurantValid">{{invalidRestaurantResponse}}</div>
-                <app-input-box (restaurantName)="updateRestaurantName($event)" [inputPage]="'restaurant'"></app-input-box>
+                <app-search (restaurantName)="updateRestaurantName($event)" [inputPage]="'restaurant'"></app-search>
             </div>
         </div>
         <div class="card-wrapper">

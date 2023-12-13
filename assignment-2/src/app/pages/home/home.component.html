@@ -3,7 +3,7 @@
     <div class="search-wrapper">
         <h1>{{pageContent.pageHeadingline1}}</h1>
         <h2>{{pageContent.pageHeadingline2}}</h2>
-      <app-input-box [inputPage]="'home'"></app-input-box>
+        <app-search [inputPage]="'home'"></app-search>
     </div>
     <div class="delivery-img"><img src={{loginImage}}></div>
   </div>
@@ -17,8 +17,7 @@
     <div class="advanced-booking">
       <hr>
       <p>{{pageContent.advancedSearchHeading}}</p>
-
-      <app-input-box class="advance-send" [inputPage]="'home-advanced'"></app-input-box>
+      <app-search [inputPage]="'home-advanced'"></app-search>
 
     </div>
   </div>

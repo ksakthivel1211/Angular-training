@@ -4,8 +4,7 @@
   
     <div class="menu-bar">
     <div routerLinkActive="active"><a routerLink="">{{headerNavBarData.home}}</a></div>
-    <div routerLinkActive="active" (click)="refreshRestaurants()"><a routerLink="restaurants">{{headerNavBarData.restaurants}}</a></div>
-    <!-- <div routerLinkActive="active" (click)="refreshRestaurants()" *ngIf="isLogged()"><a routerLink="restaurants">{{headerNavBarData.restaurants}}</a></div> -->
+    <div routerLinkActive="active" (click)="refreshRestaurants()" *ngIf="isLogged()"><a routerLink="restaurants">{{headerNavBarData.restaurants}}</a></div>
     </div>
 
     <div>
