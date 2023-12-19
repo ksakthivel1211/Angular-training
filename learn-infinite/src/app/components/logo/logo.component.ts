@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LEARN_INFINITE_LOGO } from 'src/app/constants/image-constants';
 
 @Component({
   selector: 'app-logo',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class LogoComponent {
 
+  readonly learnInfiniteLogo = LEARN_INFINITE_LOGO;
 }

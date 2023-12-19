@@ -1,0 +1,21 @@
+.course-list-wrapper{
+    display: flex;
+    column-gap: 20px;
+    overflow: scroll;
+}
+
+.course-list-wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.course-wrapper{
+    min-width:fit-content;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: var(--course-green);
+    cursor: pointer;
+}
+
+.course-tab{
+    /* background-color: var(--course-green); */
+}

@@ -1,0 +1,52 @@
+.card-wrapper{
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.img-holder{
+    background-color: var(--login-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.img-holder img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.card-description span{
+    display: inline-block;
+    
+    margin-top: 10px;
+}
+
+.card-description span:nth-child(even)
+{
+    text-align: right;
+    width: 30%;
+}
+.card-description span:nth-child(odd)
+{
+    width: 70%;
+}
+
+.title{
+    font-weight: 500;
+}
+
+.creator img{
+    width: min-content;
+}
+
+.price{
+    background-color: var(--login-green);
+    color: var(--dark-green);
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+

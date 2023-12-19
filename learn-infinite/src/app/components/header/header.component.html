@@ -1,1 +1,13 @@
-<p>header works!</p>
+<div class="header-wrapper">
+    <div class="welcome-message-wrapper">{{getLoggedStatus()?welcomeMessageLogin+getUsername()+'!':welcomeMessageLogout}}</div>
+
+    <div class="right-section">
+        <app-input [classname]='clasname'></app-input>
+        <div class="cart-holder">
+            <img src={{cartImage}}>
+        </div>
+        <app-button *ngIf="!getLoggedStatus()"></app-button>
+        <app-profile-icon *ngIf="getLoggedStatus()"></app-profile-icon>
+    </div>
+
+</div>

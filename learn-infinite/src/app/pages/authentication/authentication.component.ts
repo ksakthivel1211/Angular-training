@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AuthenticationComponent {
 
+  inputClassname="login";
+
+  loginDescription="Let's login to your account first";
+
 }

@@ -1,1 +1,37 @@
-<p>input works!</p>
+<form (ngSubmit)="onSubmit(formValue)" #formValue="ngForm" ngClass={{classname}}>
+    <div class="input-wrapper" *ngIf="classname == 'search-box'">
+        <div class="icon-wrapper">
+            <img src={{searchIcon}}>
+        </div>
+        <input type="text" placeholder="Search for courses, teachers, files">
+    </div>
+    <div class="login-input-wrapper" ngModelGroup="userData" #userData = "ngModelGroup" *ngIf="classname == 'login'">
+    
+            <label for="username" *ngIf="signupPage">Username</label>
+            <input type="text"  name="username" ngModel required *ngIf="signupPage">
+            <label for="email">Email</label>
+            <input type="text"  name="email" ngModel required>
+            <label for="email">Password</label>
+            <input type="password" id="password" name="password" ngModel required>
+
+            <span *ngIf="!userDetailsValid">{{invalidCredentials}}</span>
+
+            <app-button [buttonPage]="buttonClass" [buttonValue]="getButtonName()" ngClass={{buttonClass}}></app-button>
+
+            <div class="registration" *ngIf="!signupPage">
+                Don't have an account ? 
+                <!-- {{signupPage ? "Don't have an account": "Have any account ?"}} -->
+                <span (click)="onLoginChange()">
+                register here
+                <!-- {{signupPage ? "register here": "Login here"}} -->
+                </span>
+            </div> 
+            <div class="registration" *ngIf="signupPage">
+                Have any account ? 
+                <span (click)="onLoginChange()">
+                Login here
+                </span>
+            </div> 
+
+    </div>
+</form>

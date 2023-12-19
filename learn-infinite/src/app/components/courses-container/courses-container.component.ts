@@ -1,4 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+type course = {
+  "title":string,
+  "rating":number,
+  "creator":string,
+  "price":number,
+  "image":string
+}
 
 @Component({
   selector: 'app-courses-container',
@@ -6,5 +14,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./courses-container.component.css']
 })
 export class CoursesContainerComponent {
+
+  @Input() courseList!:course[];
+
+  ngOnInit()
+  {
+  }
 
 }
