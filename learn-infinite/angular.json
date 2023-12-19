@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "learn-infinite:build:production"
+              "buildTarget": "learn-infinite:build:production"
             },
             "development": {
-              "browserTarget": "learn-infinite:build:development"
+              "buildTarget": "learn-infinite:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "learn-infinite:build"
+            "buildTarget": "learn-infinite:build"
           }
         },
         "test": {
