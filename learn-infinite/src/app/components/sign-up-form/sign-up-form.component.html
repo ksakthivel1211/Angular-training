@@ -1,0 +1,46 @@
+<form (ngSubmit)="onSubmit()" ngClass={{themeColor}} class="form">
+
+<div class="input-container">
+
+<app-form-input *ngIf="signupPage"
+    [control]="formGroup.controls.username"
+    inputId="username"
+    label="Username"
+    class="input"
+>
+</app-form-input>
+
+<app-form-input
+    [control]="formGroup.controls.email"
+    inputId="email"
+    label="Email"
+    class="input"
+>
+</app-form-input>
+
+<app-form-input
+    [control]="formGroup.controls.password"
+    inputId="password"
+    label="Password"
+    class="input"
+>
+</app-form-input>
+
+<span class="error-block" *ngIf="!userDetailsValid">{{invalidCredentials}}</span>
+
+<app-button [buttonValid]="formGroup.invalid" [buttonValue]='getButtonName()' buttonPage="login" class="input"></app-button>
+
+
+<div class="registration">
+    {{signupPage ? loginText.text: signupText.text}}
+    <span (click)="onLoginChange()">
+    {{signupPage ? loginText.link: signupText.link}}
+    </span>
+</div>
+
+</div>
+
+
+
+
+</form>

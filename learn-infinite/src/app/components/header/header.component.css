@@ -1,0 +1,43 @@
+.header-wrapper{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-message-wrapper{
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.right-section{
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+}
+
+.cart-holder{
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-number{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2px;
+    right: -5px;
+    color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.green .cart-number{
+    background-color: var(--dark-green);
+}
+
+.red .cart-number{
+    background-color: var(--dark-red);
+}

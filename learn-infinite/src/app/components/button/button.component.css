@@ -1,0 +1,22 @@
+button{
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+button.login{
+    width: 100%;
+}
+
+button:disabled{
+    opacity: 0.6;
+}
+
+.green{
+    background-color: var(--dark-green);
+}
+
+.red{
+    background-color: var(--dark-red);
+}

@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    /* background-color: #7d3c3c */
+}
+
+:root{
+    --course-button-green:#c3d7b3;
+    --course-button-red:#d7b3b3;
+    --rate-green:#e6f0d9;
+    --rate-red:#f0d9d9;
+    --login-green:#d5dbc8;
+    --course-green:#f4f5ee;
+    --course-red:#f5eeee;
+    --light-leech:#f9faf6;
+    --light-red:#faf6f6;
+    --dark-red:#7d3c3c;
+    --dark-green:#537d3c;
+    --gray:#c7c7c7;
+    --card-gray:#f8f8f8;
+    --course-image-sandal:#fff0d3;
+    --course-image-peach:#ffdecf;
+    --course-image-gray:#bfbfbf;
+    --course-image-green:#d7e2c9;
+    --course-image-pink:#f0d7ed;
+    --author-gray:#909090;
+}
+
+a{
+    text-decoration: none !important;
+    /* color: white; */
+}
+
+button{
+    cursor: pointer;
+}
+
+img{
+    width: 100%;
+}

@@ -1,0 +1,21 @@
+.theme-selection div{
+    display: flex;
+    gap: 10px;
+    border: 2px gainsboro solid;
+    width: 40%;
+    padding: 5px;
+}
+
+.color-button{
+    width: 30px !important;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.color-button.green{
+    background-color: green;
+}
+
+.color-button.red{
+    background-color: red;
+}

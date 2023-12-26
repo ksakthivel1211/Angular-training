@@ -1,0 +1,55 @@
+*{
+    scroll-behavior: smooth;
+}
+
+.card-container{
+    display:flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.exploreCourse.course-container,.myCourse.course-container{
+    height: 80vh;
+    overflow: scroll;
+}
+
+.container-header{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.container-header .title{
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.dashboard .card-container{
+    overflow: scroll;
+}
+
+.dashboard .card-container::-webkit-scrollbar{
+    display: none;
+}
+
+.exploreCourse .card-container,.myCourse .card-container{
+    flex-wrap: wrap;
+}
+
+.card-container::-webkit-scrollbar{
+    display: none;
+}
+
+.dashboard .card{
+    min-width: 244px;
+    max-width:244px;
+    background-color: var(--card-gray);
+    border-radius: 15px;
+    border: none;
+}
+
+.exploreCourse .card,.myCourse .card{
+    width: 100% !important;
+    background-color: var(--card-gray);
+    border-radius: 15px;
+}

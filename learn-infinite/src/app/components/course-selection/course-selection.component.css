@@ -1,0 +1,32 @@
+.course-list-wrapper{
+    display: flex;
+    gap: 20px;
+    overflow: scroll;
+}
+
+.course-list-wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.course-wrapper{
+    min-width:fit-content;
+    border-radius: 30px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.green .course-wrapper{
+    background-color: var(--course-green);
+}
+
+.red .course-wrapper{
+    background-color: var(--course-red);
+}
+
+.green .active{
+    background-color: var(--course-button-green);
+}
+
+.red .active{
+    background-color: var(--course-button-red);
+}

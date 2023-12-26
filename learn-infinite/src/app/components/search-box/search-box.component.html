@@ -1,0 +1,6 @@
+<div class="input-wrapper">
+    <div class="icon-wrapper">
+        <img src={{searchIcon}}>
+    </div>
+    <input #search (keyup.enter)="onEnter(search.value)" type="text" name="coursename" ngModel placeholder="Search for courses, teachers, files">
+</div>

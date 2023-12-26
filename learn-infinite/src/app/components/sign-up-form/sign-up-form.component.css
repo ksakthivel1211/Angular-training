@@ -1,0 +1,28 @@
+
+.input-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.input{
+    width: 100%;
+}
+
+.registration span{
+    cursor: pointer;
+}
+
+.green .registration span{
+    color: var(--dark-green);
+}
+
+.red .registration span{
+    color: var(--dark-red);
+}
+
+.error-block{
+    color: red;
+}
+

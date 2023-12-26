@@ -1,0 +1,18 @@
+<div class="dashboard-wrapper" ngClass={{themeColor}}>
+
+    <app-ad-section></app-ad-section>
+    <app-course-selection (courseName)="updateCourse($event)" ></app-course-selection>
+    
+    <div class="selected-courses courses">
+        <app-courses-container [containerHeading]="selectedCourse+courseSufix" [courseList]="selectedCourseList" [containerPage]="pageValue" *ngIf="!getCourseLoddingStatus()"></app-courses-container>
+        <span class="no-content-available" *ngIf="!getSearchedCourseValid()">{{noSearchResult}}</span>
+        <div class="loader" *ngIf="getCourseLoddingStatus()"></div>
+    </div>
+
+    <div class="recommended-courses courses" *ngIf="loggedIn()">
+        <app-courses-container [containerHeading]="recommendationHeading" [courseList]="recommendedCourseList" [containerPage]="pageValue" *ngIf="!getRecommendedCourseLoadingStatus()"></app-courses-container>
+        <div class="loader" *ngIf="getRecommendedCourseLoadingStatus()"></div>
+    </div>
+
+</div>
+

@@ -1,0 +1,33 @@
+main{
+    height: 100vh;
+    background-color: var(--login-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-wrapper{
+    width: 40%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 60px 0;
+}
+
+.login-wrapper p{
+    font-size: 26px;
+    width: 35%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.logo{
+    width: 30%;
+}
+
+.input-form{
+    width: 60%;
+}

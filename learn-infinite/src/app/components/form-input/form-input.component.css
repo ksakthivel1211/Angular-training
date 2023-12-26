@@ -1,0 +1,16 @@
+input{
+    width: 100%;
+    padding: 15px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--gray);
+    margin-bottom: 15px;
+}
+
+label{
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+.error-block{
+    color: red;
+}

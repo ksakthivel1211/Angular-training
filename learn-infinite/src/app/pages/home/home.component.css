@@ -1,0 +1,16 @@
+main{
+    /* overflow: hidden; */
+}
+
+.home-container{
+    display: flex;
+    /* overflow: hidden; */
+}
+
+.right-section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 40px;
+    width: 80vw;
+}

@@ -1,0 +1,45 @@
+.menu-container{
+    background-color: var(--light-leech);
+    padding: 20px 50px;
+    height:100vh;
+    width: 20vw;
+    overflow: hidden;
+}
+
+.green.menu-container{
+    background-color: var(--light-leech);
+}
+
+.red.menu-container{
+    background-color: var(--light-red);
+}
+
+.menu-bar{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+}
+
+.menu-bar div{
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.menu-bar a{
+    color: black;
+    cursor: pointer;
+}
+
+.logout{
+}
+
+.green .active a{
+    color: var(--dark-green);
+}
+
+.red .active a{
+    color: var(--dark-red);
+}
