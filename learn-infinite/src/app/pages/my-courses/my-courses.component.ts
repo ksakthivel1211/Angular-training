@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MY_COURSES_NILL } from 'src/app/constants/error-constants';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { CourseService } from 'src/app/services/course.service';
 import { DataService } from 'src/app/services/data.service';
 
 type course = {
@@ -25,13 +26,13 @@ export class MyCoursesComponent {
   courseList:course[]=[];
 
   constructor(private authenticatService:AuthenticationService,
-              private dataService:DataService
+              private courseService:CourseService
     ){}
 
   ngOnInit()
   {
-    this.dataService.updateUserCourses();
-    this.courseList = this.dataService.getUserCourses();
+    this.courseService.updateUserCourses();
+    this.courseList = this.courseService.getUserCourses();
   }
 
   getCourseAvalability()

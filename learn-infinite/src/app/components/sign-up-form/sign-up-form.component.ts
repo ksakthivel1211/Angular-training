@@ -6,6 +6,8 @@ import { SEARCH_ICON } from 'src/app/constants/image-constants';
 import { PASSWORD_REGEX } from 'src/app/constants/regex';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { DataService } from 'src/app/services/data.service';
+import { ThemeService } from 'src/app/services/theme.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 type userData = {
   email:string,
@@ -69,18 +71,18 @@ export class SignUpFormComponent {
 
   constructor(private authenticationService:AuthenticationService,
               private dataService: DataService,
-              private router:Router
+              private router:Router,
+              private themeService:ThemeService,
+              private userDataService:UserDataService
     ){}
 
   ngOnInit()
   {
-    this.dataService.getThemeColor().subscribe((data)=> this.themeColor = data);
+    this.themeService.getThemeColor().subscribe((data)=> this.themeColor = data);
   }
 
   onSubmit()
   {
-    console.log(this.formGroup);
-    
       if(this.signupPage)
       {
         this.userData={
@@ -89,9 +91,10 @@ export class SignUpFormComponent {
           username:this.formGroup.controls.username.value,
           boughtCourses:[]
         }
-        this.authenticationService.addToUserdata(this.userData);
+        this.userDataService.addToUserdata(this.userData);
         this.userDetailsValid=true;
         this.signupPage = false;
+        this.formGroup.controls['username'].clearValidators();
       }
       
       else{
@@ -118,6 +121,13 @@ export class SignUpFormComponent {
   {
     this.signupPage = !this.signupPage;
     this.formGroup.reset();
+    if(!this.signupPage)
+    {
+      this.formGroup.controls['username'].clearValidators();
+    }
+    else{
+      this.formGroup.controls['username'].setValidators([Validators.required]);
+    }
     this.userDetailsValid=true;
   }
 
@@ -125,11 +135,9 @@ export class SignUpFormComponent {
   {
     if(!this.signupPage)
     {
-      this.formGroup.controls['username'].clearValidators();
       return "Login";
     }
     else{
-      this.formGroup.controls['username'].setValidators([Validators.required]);
       return "Register";
     }
   }

@@ -6,6 +6,7 @@
     [control]="formGroup.controls.username"
     inputId="username"
     label="Username"
+    inputType="text"
     class="input"
 >
 </app-form-input>
@@ -14,6 +15,7 @@
     [control]="formGroup.controls.email"
     inputId="email"
     label="Email"
+    inputType="text"
     class="input"
 >
 </app-form-input>
@@ -22,13 +24,19 @@
     [control]="formGroup.controls.password"
     inputId="password"
     label="Password"
+    inputType="password"
     class="input"
 >
 </app-form-input>
 
 <span class="error-block" *ngIf="!userDetailsValid">{{invalidCredentials}}</span>
 
-<app-button [buttonValid]="formGroup.invalid" [buttonValue]='getButtonName()' buttonPage="login" class="input"></app-button>
+<app-button 
+[buttonValid]="formGroup.invalid" 
+[buttonValue]='getButtonName()' 
+buttonPage="login" 
+class="input">
+</app-button>
 
 
 <div class="registration">

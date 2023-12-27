@@ -1,7 +1,9 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { NO_SEARCH_RESULT } from 'src/app/constants/error-constants';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { CourseService } from 'src/app/services/course.service';
 import { DataService } from 'src/app/services/data.service';
+import { ThemeService } from 'src/app/services/theme.service';
 
 type course = {
   "title":string,
@@ -41,19 +43,21 @@ export class DashboardComponent {
   recommendedCourseLoadingStatus = false;
 
   constructor(private dataService:DataService,
-              private authenticationService:AuthenticationService
+              private authenticationService:AuthenticationService,
+              private themeService:ThemeService,
+              private courseService:CourseService
     ){}
 
   ngOnInit()
   {
-    this.dataService.getThemeColor().subscribe((data)=>{
+    this.themeService.getThemeColor().subscribe((data)=>{
       this.themeColor = data;
     });
 
     this.authenticationService.autoLogin();
     this.getCourseData();
     this.getRecommendedCourseData();
-    this.dataService.getSearchedCourses().subscribe((data)=>{
+    this.courseService.getSearchedCourses().subscribe((data)=>{
       this.selectedCourseList = data
       if(this.selectedCourseList.length>0)
       {

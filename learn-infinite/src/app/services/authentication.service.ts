@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-type userDataa = {
+type userData = {
   email:string,
   password:string,
   username:string,
@@ -16,7 +16,7 @@ export class AuthenticationService {
 
   userName ="";
 
-  userSignedUpData:userDataa[]=[
+  userSignedUpData:userData[]=[
     {
       email:"sa@gmail.com",
       password:"Sakthi11!",
@@ -25,7 +25,7 @@ export class AuthenticationService {
     }
 ];
 
-currentUser:userDataa = {
+currentUser:userData = {
   email:"",
   password:"",
   username:"",
@@ -37,16 +37,6 @@ currentUser:userDataa = {
   getLoginStatus()
   {
     return this.loggedStatus;     
-  }
-
-  getUserName()
-  {
-    return this.currentUser.username;
-  }
-
-  addToUserdata(value:userDataa)
-  {
-    this.userSignedUpData.push(value);
   }
 
   authenticateUser(email:string,password:string)
@@ -61,6 +51,7 @@ currentUser:userDataa = {
       this.currentUser.username = userPresent[0].username;
       this.currentUser.email = userPresent[0].email;
       this.currentUser.password = userPresent[0].password;
+      this.currentUser.boughtCourses = userPresent[0].boughtCourses;
       localStorage.setItem('userLoginData',JSON.stringify(this.currentUser.email));
       return true;
     }
@@ -90,16 +81,6 @@ currentUser:userDataa = {
   {
     this.loggedStatus = false;
     localStorage.removeItem('userLoginData');
-  }
-
-  addCourseToUser(courseName:string)
-  {
-    this.currentUser.boughtCourses.push(courseName);
-  }
-
-  getUserCoursesName()
-  {
-    return this.currentUser.boughtCourses;
   }
 
 

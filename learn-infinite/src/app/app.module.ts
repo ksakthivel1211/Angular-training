@@ -11,10 +11,8 @@ import { CoursesContainerComponent } from './components/courses-container/course
 import { AdSectionComponent } from './components/ad-section/ad-section.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { AuthenticationComponent } from './pages/authentication/authentication.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LeftMenuContainerComponent } from './components/left-menu-container/left-menu-container.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CourseSelectionComponent } from './components/course-selection/course-selection.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -29,6 +27,7 @@ import { SentenceCasePipe } from './pipes/sentence-case.pipe';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
 import { FormInputComponent } from './components/form-input/form-input.component';
+import { LoginRegistrationComponent } from './pages/login-registration/login-registration.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +40,8 @@ import { FormInputComponent } from './components/form-input/form-input.component
     AdSectionComponent,
     HeaderComponent,
     DashboardComponent,
-    AuthenticationComponent,
     HomeComponent,
     LeftMenuContainerComponent,
-    FooterComponent,
     ButtonComponent,
     CourseSelectionComponent,
     ExploreCoursesComponent,
@@ -55,7 +52,8 @@ import { FormInputComponent } from './components/form-input/form-input.component
     SentenceCasePipe,
     SearchBoxComponent,
     SignUpFormComponent,
-    FormInputComponent
+    FormInputComponent,
+    LoginRegistrationComponent
   ],
   imports: [
     BrowserModule,

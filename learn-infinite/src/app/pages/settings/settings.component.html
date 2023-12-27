@@ -5,7 +5,11 @@
         <p>{{pageContent.themeSelectionHeading}}</p>
         <div>
             <ng-container *ngFor="let color of colorPallete">
-                <div (click)="onThemeChange(color)" class="color-button" ngClass={{color}}></div>
+                <div 
+                (click)="onThemeChange(color)" 
+                class="color-button" 
+                ngClass={{color}}>
+                </div>
             </ng-container>
         </div>
     </div>

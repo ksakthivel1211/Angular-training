@@ -29,7 +29,11 @@
     </div>
 
     <div *ngIf="containerPage=='exploreCourse'" class="add-to-cart-button-wrapper">
-        <app-button [buttonPage]="containerPage" [buttonValue]="getButtonName()" [buttonOutputValue]="courseDetails.title"></app-button>
+        <app-button 
+        [buttonPage]="containerPage" 
+        [buttonValue]="getButtonName()"
+        [buttonOutputValue]="courseDetails.title">
+        </app-button>
     </div>
     
 </div>

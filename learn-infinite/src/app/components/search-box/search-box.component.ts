@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SEARCH_ICON } from 'src/app/constants/image-constants';
+import { CourseService } from 'src/app/services/course.service';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -11,13 +12,15 @@ export class SearchBoxComponent {
 
   readonly searchIcon = SEARCH_ICON;
 
-  constructor(private dataService:DataService){}
+  placeHolder = 'Search for courses, teachers, files';
+
+  constructor(private courseService:CourseService){}
 
   onEnter(value:string)
   {
     if(value)
     {
-      this.dataService.onSearchedCourse(value);
+      this.courseService.onSearchedCourse(value);
     }
   }
 }

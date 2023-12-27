@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CourseService } from 'src/app/services/course.service';
 import { DataService } from 'src/app/services/data.service';
 
 type course = {
@@ -22,14 +23,14 @@ export class ExploreCoursesComponent {
 
   courseList:course[]=[];
 
-  constructor(private dataService:DataService){}
+  constructor(private courseService:CourseService,private dataService:DataService){}
 
   ngOnInit()
   {
-    if((this.dataService.getSelectedExploreCourse()).length>0)
+    if((this.courseService.getSelectedExploreCourse()).length>0)
     {
-      this.courseList = this.dataService.getSelectedExploreCourse();
-      this.dataService.emptyExploredCourse();
+      this.courseList = this.courseService.getSelectedExploreCourse();
+      this.courseService.emptyExploredCourse();
     }
     else
     {

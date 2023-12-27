@@ -16,7 +16,6 @@ type course = {
 })
 export class DataService {
 
-  themeColor:BehaviorSubject<string> = new BehaviorSubject<string>('green');
 
   courseResponse!:course;
 
@@ -30,7 +29,7 @@ export class DataService {
 
   cartAddedCourses:Subject<course[]> = new Subject<course[]>();
 
-  constructor(private http:HttpClient,private authenticationService:AuthenticationService) { }
+  constructor(private http:HttpClient) { }
 
   selectedCourseDetails:course[]=[];
 
@@ -48,95 +47,5 @@ export class DataService {
     return this.http.get('https://mocki.io/v1/89426ea9-cf0d-4536-bf0e-0ddbd2a6043c');
   }
 
-  changeTheme(color:string)
-  {
-    this.themeColor.next(color);
-  }
-
-  getThemeColor()
-  {
-    return this.themeColor;
-  }
-
-  updateSelectedCourse(courseName:string)
-  {
-    this.selectedCourse = courseName;
-  }
-
-  onSearchedCourse(name:string)
-  { 
-    this.selectedCourseDetails = [];
-    this.getCourseList().subscribe((data:any)=>{
-      const allCourses:course[] =  data.courses;
-
-      allCourses.forEach((data)=>{
-        if(data.title.toLowerCase()===name.toLowerCase()||data.creator.toLowerCase()===name.toLowerCase())
-        {
-          this.selectedCourseDetails.push(data);
-        }
-      });
-      this.searchedArray.next(this.selectedCourseDetails);
-    });
-  }
-
-  getCourseData(name:string)
-  {
-    this.userCourses = [];
-    this.getCourseList().subscribe((data:any)=>{
-      
-      const allCourses:course[] =  data.courses;
-      
-      allCourses.forEach((data)=>{
-        if(data.title===name)
-        {
-          this.userCourses.push(data);
-        }
-      });
-    });
-  }
-
-  updateUserCourses()
-  {
-    this.authenticationService.getUserCoursesName().forEach((data)=>{
-      this.getCourseData(data);
-    });
-  }
-
-
-  getUserCourses()
-  {
-    return this.userCourses;
-  }
-
-  getSearchedCourses()
-  {
-    return this.searchedArray;
-  }
-
-  getSelectedExploreCourse()
-  {
-    return this.exploreCourseSelected;
-  }
-
-  setSelectedExploredCourse(course:course)
-  {
-    this.exploreCourseSelected = [];
-    this.exploreCourseSelected.push(course);
-  }
-
-  emptyExploredCourse()
-  {
-    this.exploreCourseSelected = [];
-  }
-
-  getCartCount()
-  {
-    return this.cartCount;
-  }
-
-  updateCartCount()
-  {
-    this.cartCount.next(1);
-  }
   
 }

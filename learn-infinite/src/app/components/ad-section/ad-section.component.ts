@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BOOK_IMAGE, STUDY_IMAGE } from 'src/app/constants/image-constants';
 import { DataService } from 'src/app/services/data.service';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-ad-section',
@@ -61,11 +62,11 @@ export class AdSectionComponent {
   //   },2000)
   // }
 
-  constructor(private dataService:DataService){}
+  constructor(private themeService:ThemeService){}
 
   ngOnInit()
   {
-    this.dataService.getThemeColor().subscribe((data)=> this.themeColor = data);  
+    this.themeService.getThemeColor().subscribe((data)=> this.themeColor = data);  
   }
 
 

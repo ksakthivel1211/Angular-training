@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-settings',
@@ -15,10 +16,10 @@ export class SettingsComponent {
 
   colorPallete = ['green','red'];
 
-  constructor(private dataService:DataService){}
+  constructor(private themeService:ThemeService){}
 
   onThemeChange(value:string)
   {
-    this.dataService.changeTheme(value);
+    this.themeService.changeTheme(value);
   }
 }

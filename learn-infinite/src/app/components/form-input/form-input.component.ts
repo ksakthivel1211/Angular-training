@@ -12,6 +12,7 @@ export class FormInputComponent implements OnInit{
   @Input() inputId = '';
   @Input() control = new FormControl();
   @Input() label = '';
+  @Input() inputType = '';
 
   errorMessages: Record<string,string> = {
     required:NO_INPUT,

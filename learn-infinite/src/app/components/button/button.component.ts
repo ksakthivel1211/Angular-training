@@ -1,7 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { CourseService } from 'src/app/services/course.service';
 import { DataService } from 'src/app/services/data.service';
+import { ThemeService } from 'src/app/services/theme.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-button',
@@ -12,7 +15,7 @@ export class ButtonComponent {
 
   themeColor!:string;
 
-  @Input() buttonValid!:boolean|null
+  @Input() buttonValid!:boolean|null;
 
   @Input() buttonPage:string="";
 
@@ -20,16 +23,22 @@ export class ButtonComponent {
 
   @Input() buttonOutputValue:string="";
 
-  disable = false;
 
   constructor(private router:Router,
               private authenticationService:AuthenticationService,
-              private dataService:DataService
+              private courseService:CourseService,
+              private themeService:ThemeService,
+              private userDataService:UserDataService
     ){}
 
   ngOnInit()
   {
-    this.dataService.getThemeColor().subscribe((data)=> this.themeColor = data);  
+    this.themeService.getThemeColor().subscribe((data)=> this.themeColor = data);
+    if(this.courseService.findUserCourseAvalable(this.buttonOutputValue) && this.buttonPage=='exploreCourse')
+    {
+      this.buttonValue = 'Added';
+      this.buttonValid= true;
+    }
   }
 
   onClick()
@@ -44,10 +53,10 @@ export class ButtonComponent {
     }
     else if(this.buttonValue=="Add to cart")
     {
-      this.disable = true;
+      this.buttonValid = true;
       this.buttonValue = "Added";
-      this.dataService.updateCartCount();
-      this.authenticationService.addCourseToUser(this.buttonOutputValue);
+      this.courseService.updateCartCount();
+      this.userDataService.addCourseToUser(this.buttonOutputValue);
     }
 
   }

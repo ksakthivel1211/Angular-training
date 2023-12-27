@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { DataService } from 'src/app/services/data.service';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-left-menu-container',
@@ -17,7 +18,7 @@ export class LeftMenuContainerComponent implements OnInit {
   selectedTab = 'dashboard';
 
   constructor(private authenticationService:AuthenticationService,
-              private dataService:DataService
+              private themeService:ThemeService
     ){}
 
   pagesArray = [
@@ -49,7 +50,7 @@ export class LeftMenuContainerComponent implements OnInit {
   ]
 
   ngOnInit() {
-    this.dataService.getThemeColor().subscribe((data)=> this.themeColor = data);  
+    this.themeService.getThemeColor().subscribe((data)=> this.themeColor = data);  
   }
 
   getLoggedStatus()

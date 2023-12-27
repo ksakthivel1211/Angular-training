@@ -1,2 +1,9 @@
-<app-courses-container [courseList]="courseList" [containerPage]="pageValue" *ngIf="getCourseAvalability()"></app-courses-container>
-<div *ngIf="!getCourseAvalability()">{{noCoursesResponse}}</div>
+<app-courses-container 
+[courseList]="courseList" 
+[containerPage]="pageValue" 
+*ngIf="getCourseAvalability()">
+</app-courses-container>
+
+<div *ngIf="!getCourseAvalability()">
+    {{noCoursesResponse}}
+</div>

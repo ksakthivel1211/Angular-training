@@ -1,11 +1,15 @@
 <div class="header-wrapper" ngClass={{themeColor}}>
-    <div class="welcome-message-wrapper">{{getLoggedStatus()?(welcomeMessageLogin+getUsername()|prefixSufix:'exclamation-nxt'):welcomeMessageLogout}}</div>
+    <div class="welcome-message-wrapper">
+        {{getLoggedStatus()?(welcomeMessageLogin+getUsername()|prefixSufix:'exclamation-nxt'):welcomeMessageLogout}}
+    </div>
 
     <div class="right-section">
         <app-search-box></app-search-box>
         <div class="cart-holder" (click)="cartOnClick()">
-            <img src={{cartImage}}>
-            <div class="cart-number">{{cartNumber}}</div>
+            <img src={{cartImage}} alt="cart-image">
+            <div class="cart-number">
+                {{cartNumber}}
+            </div>
         </div>
         <app-button *ngIf="!getLoggedStatus()"></app-button>
         <app-profile-icon *ngIf="getLoggedStatus()"></app-profile-icon>

@@ -2,7 +2,10 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { PROFILE_ICON, STAR_IMAGE } from 'src/app/constants/image-constants';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { CourseService } from 'src/app/services/course.service';
 import { DataService } from 'src/app/services/data.service';
+import { ThemeService } from 'src/app/services/theme.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 type course = {
   "title":string,
@@ -42,14 +45,15 @@ export class CardComponent {
 
   commonCourseDescription = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere quis deleniti, quia temporibus eveniet a quod libero impedit enim tempore numquam qui eaque ducimus quos neque, nobis asperiores, veritatis quae.';
 
-  constructor(private dataService:DataService,
-              private authenticationService:AuthenticationService,
-              private router:Router
+  constructor(private courseService:CourseService,
+              private userDataService:UserDataService,
+              private router:Router,
+              private themeService:ThemeService
     ){}
 
   ngOnInit()
     {
-      this.dataService.getThemeColor().subscribe((data)=> this.themeColor = data);  
+      this.themeService.getThemeColor().subscribe((data)=> this.themeColor = data);  
     }
 
   getButtonName()
@@ -61,14 +65,14 @@ export class CardComponent {
   {
     if(this.containerPage=="dashboard")
     {
-      this.dataService.setSelectedExploredCourse(this.courseDetails);
+      this.courseService.setSelectedExploredCourse(this.courseDetails);
       this.router.navigate(['/explore-course']);
     }
   }
 
   addToCart()
   {
-    this.authenticationService.addCourseToUser(this.courseDetails.title);
+    this.userDataService.addCourseToUser(this.courseDetails.title);
   }
 
   showFullCardValid()

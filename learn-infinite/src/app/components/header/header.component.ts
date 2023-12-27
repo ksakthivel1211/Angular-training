@@ -3,7 +3,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CART_IMAGE, PROFILE_ICON } from 'src/app/constants/image-constants';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { CourseService } from 'src/app/services/course.service';
 import { DataService } from 'src/app/services/data.service';
+import { ThemeService } from 'src/app/services/theme.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-header',
@@ -28,15 +31,17 @@ export class HeaderComponent {
   userName = "";
 
   constructor(private authenticationService:AuthenticationService,
-              private dataService:DataService,
+              private courseService:CourseService,
               private router:Router,
-              private titlePipe:TitleCasePipe
+              private titlePipe:TitleCasePipe,
+              private themeService:ThemeService,
+              private userDataService:UserDataService
     ){}
 
   ngOnInit()
   {
-    this.dataService.getThemeColor().subscribe((data)=> this.themeColor = data);  
-    this.dataService.getCartCount().subscribe((data)=>{
+    this.themeService.getThemeColor().subscribe((data)=> this.themeColor = data);  
+    this.courseService.getCartCount().subscribe((data)=>{
       this.cartNumber = this.cartNumber + data;
     })
     this.userName = this.getUsername();
@@ -49,7 +54,7 @@ export class HeaderComponent {
 
   getUsername()
   {
-    return this.titlePipe.transform(this.authenticationService.getUserName());
+    return this.titlePipe.transform(this.userDataService.getUserName());
   }
 
   cartOnClick()
