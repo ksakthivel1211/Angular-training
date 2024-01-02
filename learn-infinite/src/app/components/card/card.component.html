@@ -1,0 +1,39 @@
+<div class="card-wrapper" (click)="onCardClick()" ngClass={{containerPage}}>
+
+    <div class="img-holder" ngClass={{cardColor}}>
+        <img src={{courseDetails.image}}>
+    </div>
+
+    <div class="card-description" ngClass={{themeColor}}>
+
+        <div class="line-1 card-line">
+            <div *ngIf="showFullCardValid()" class="heading">{{courseDescriptionHeadings.courseTitle}}</div>
+            <div class="title">{{courseDetails.title}}</div>
+    
+            <div *ngIf="showFullCardValid()" class="heading">{{courseDescriptionHeadings.courseDescription}}</div>
+            <div *ngIf="showFullCardValid()">{{commonCourseDescription}}</div>
+    
+            <div *ngIf="showFullCardValid()" class="heading">{{courseDescriptionHeadings.rating}}</div>
+            <div class="rating"><div><img src={{starImg}}></div>{{courseDetails.rating}}</div>
+        </div>
+        
+        <div class="line-2 card-line">
+            <div *ngIf="showFullCardValid()" class="heading">{{courseDescriptionHeadings.author}}</div>
+            <div class="creator">
+                <img src={{profileIcon}}>{{courseDetails.creator|titlecase}}
+            </div>
+    
+            <div *ngIf="showFullCardValid()" class="heading">{{courseDescriptionHeadings.price}}</div>
+            <div class="price">{{courseDetails.price|prefixSufix:'dollar'}}</div>
+        </div>
+    </div>
+
+    <div *ngIf="containerPage=='exploreCourse'" class="add-to-cart-button-wrapper">
+        <app-button 
+        [buttonPage]="containerPage" 
+        [buttonValue]="getButtonName()"
+        [buttonOutputValue]="courseDetails.title">
+        </app-button>
+    </div>
+    
+</div>

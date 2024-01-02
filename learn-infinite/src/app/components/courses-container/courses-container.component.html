@@ -1,0 +1,22 @@
+<div class="course-container" ngClass={{containerPage}}>
+
+    <div class="container-header" *ngIf="containerPage=='dashboard'">
+
+        <div class="title">{{containerHeading | sentenceCase}}</div>
+        <div>
+            <app-next-back-arrow (scrollSide)="onScroll($event)"></app-next-back-arrow>
+        </div>
+        
+    </div>
+
+    <div class="card-container" id="scroll-container">
+        <div class="card" *ngFor="let course of courseList;index as i">
+            <app-card 
+            [courseDetails]="course" 
+            [containerPage]="containerPage" 
+            [cardColor]="setBg(i)">
+            </app-card>
+        </div>
+    </div>
+    
+</div>

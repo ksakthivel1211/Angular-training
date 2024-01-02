@@ -1,0 +1,18 @@
+.input-wrapper{
+    margin: 0 20px;
+    width: 35rem;
+    position: relative;
+}
+
+.input-wrapper input{
+    width: 100%;
+    padding: 10px 38px;
+    border-radius: 23px;
+    border: 1px solid var(--gray);
+}
+
+.icon-wrapper{
+    position: absolute;
+    top: 9px;
+    left: 13px;
+}

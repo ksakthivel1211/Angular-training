@@ -1,0 +1,11 @@
+.arrow-wrapper{
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.img-holder{
+    width: 14px;
+    cursor: pointer;
+}
+

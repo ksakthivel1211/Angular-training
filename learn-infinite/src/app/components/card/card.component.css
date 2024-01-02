@@ -1,0 +1,123 @@
+.card-wrapper{
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.img-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.img-holder img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.dashboard .card-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90px;
+}
+
+.dashboard .card-line{
+    display: flex;
+    justify-content: space-between;
+}
+
+.exploreCourse .card-description span,.myCourse .card-description span
+{
+    display: block;
+}
+
+.dashboard .card-description .price{
+    font-weight: 600;
+}
+
+.heading{
+    margin-top: 15px;
+}
+
+.green .heading{
+    color: var(--dark-green);
+}
+
+.red .heading{
+    color: var(--dark-red);
+}
+
+.rating{
+    display: flex;
+    width: 50px;
+}
+
+.rating div{
+    width: 20px;
+    position: relative;
+    top: -3px;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.creator{
+    color: var(--author-gray);
+}
+
+.creator img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.exploreCourse .price,.myCourse .price{
+    color: black;
+    background-color: transparent;
+}
+
+.price{
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.dashboard .green .price{
+    background-color: var(--rate-green);
+    color: var(--dark-green);
+}
+
+.dashboard .red .price{
+    background-color: var(--rate-red);
+    color: var(--dark-red);
+}
+
+.add-to-cart-button-wrapper{
+    margin-top: 10px;
+}
+
+.img-sandal{
+    background-color: var(--course-image-sandal);
+}
+
+.img-peach{
+    background-color: var(--course-image-peach);
+}
+
+.img-gray{
+    background-color: var(--course-image-gray);
+}
+
+.img-green{
+    background-color: var(--course-image-green);
+}
+
+.img-pink{
+    background-color: var(--course-image-pink);
+}
+

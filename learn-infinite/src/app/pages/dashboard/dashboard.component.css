@@ -1,0 +1,33 @@
+.dashboard-wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: auto;
+    height: 85vh;
+}
+
+p {
+  font-weight: 600;
+}
+
+.loader{
+  border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+  .green .loader{
+    border-top: 16px solid var(--rate-green);
+  }
+
+  .red .loader{
+    border-top: 16px solid var(--rate-red);
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

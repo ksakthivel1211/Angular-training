@@ -1,0 +1,23 @@
+<div class="menu-container" ngClass={{themeColor}}>
+  <app-logo></app-logo>
+    
+  <div class="menu-bar">
+    <div 
+    routerLinkActive="active" 
+    (click)="onClick(page.name)" 
+    [ngClass]="{'active':selectedTab==page.name}" 
+    *ngFor="let page of pagesArray">
+
+      <a routerLink={{page.routeLink}}>
+        {{page.displayName}}
+      </a>
+
+    </div>
+  </div>
+
+  <app-button 
+  [buttonValue]="buttonMessage" 
+  class="logout" 
+  *ngIf="getLoggedStatus()">
+  </app-button> 
+</div>

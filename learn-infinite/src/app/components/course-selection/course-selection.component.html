@@ -1,0 +1,10 @@
+<div class="course-list-wrapper" ngClass={{themeColor}}>
+    <div 
+    class="course-wrapper" 
+    *ngFor="let course of courseList"  
+    [ngClass]="{'active':course==selectedCourse}">
+
+        <div class="course-tab" (click)="onCourseSelection(course)">{{course | titlecase}}</div>
+        
+    </div>
+</div>

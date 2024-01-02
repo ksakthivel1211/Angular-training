@@ -1,0 +1,15 @@
+<div class="input-wrapper">
+
+    <label [for]="inputId">{{label}}</label>
+    <input 
+    type={{inputType}} 
+    [id]="inputId" 
+    [formControl]="control">
+    
+    <ng-container *ngIf="control.invalid && control.dirty && control.touched">
+        <div *ngFor="let err of control.errors | keyvalue" class="error-block">
+            {{errorMessages[err.key]}}
+        </div>
+    </ng-container>
+
+</div>
